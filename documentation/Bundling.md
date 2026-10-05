@@ -181,7 +181,7 @@ In order to use Azure SDK libraries inside JS, you need to import code from the 
 
 ```js
 // src/index.js
-import { SomeClient } from "@azure/some-sdk-package";
+import { BlobServiceClient } from "@azure/storage-blob";
 // Now do something interesting with the client
 ```
 

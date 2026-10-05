@@ -267,8 +267,8 @@ const poller = await computeClient.dedicatedHosts.beginCreateOrUpdate(
   hostName,
   parameter
 );
-console.log(`The current status? ${poller.getPollState().state"}`)
-const result = await poller.pollUntilFinished().then((response) => {
+console.log(`The current status? ${poller.getOperationState().status}`)
+const result = await poller.pollUntilDone().then((response) => {
   console.log(response);
 });
       </pre>
