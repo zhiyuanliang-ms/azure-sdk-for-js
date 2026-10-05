@@ -231,7 +231,7 @@ Restore the flattened surface with `Legacy.flattenProperty`:
 
 ```tsp
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "SDK backward compatibility"
-@@Azure.ClientGenerator.Core.Legacy.flattenProperty(Identity.properties, "javascript");
+@@Legacy.flattenProperty(Identity.properties, "javascript");
 ```
 
 ### 7. Removal of `begin*` Long-Running Operation Methods

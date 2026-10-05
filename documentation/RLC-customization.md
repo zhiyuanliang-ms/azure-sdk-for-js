@@ -12,7 +12,7 @@ source-code-folder-path: ./generated
 
 ## Custom authentication
 
-Before you customize the code, you should run ```npx dev-tool customization apply``` to sync the generated src code from ./generated into ./src
+Before you customize the code, you should run ```npx dev-tool customization apply -s ./generated -t ./src``` to sync the generated src code from ./generated into ./src
 
 Some services require a custom authentication flow. For example, a service might use Key Authentication requiring 2 headers for key authentication (e.g., `Ocp-Apim-Subscription-Key` and `x-api-key`), which is different from the usual key authentication which only requires a single key.
 
@@ -285,10 +285,10 @@ import {
   MyServiceClient,
 } from "@azure-rest/my-service";
 
-const adminClient = MyServiceAdministrationClient.createClient(endpoint, credential);
+const adminClient = MyServiceAdministrationClient(endpoint, credential);
 // call any admin operation
 const createdResponse = await adminClient.createResource(`<parameter>`);
-const serviceClient = MyServiceClient.createClient(endpoint, credential);
+const serviceClient = MyServiceClient(endpoint, credential);
 // call any non-admin operation
 const listedResponse = await serviceClient.listItems(`<parameter>`);
 ```
